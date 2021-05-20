@@ -5,4 +5,9 @@ import bookstore.schema
 class Query(bookstore.schema.Query, graphene.ObjectType):
     pass
 
-schema = graphene.Schema(query=Query)
+
+class Mutation(bookstore.schema.Mutation, graphene.ObjectType):
+    pass
+
+
+schema = graphene.Schema(query=Query, mutation=Mutation)
