@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = 'account.profile'
 
 # Application definition
 
@@ -37,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'account.apps.AccountConfig',
+    'bookstore.apps.BookstoreConfig',
+    'graphene_django',
 ]
 
 MIDDLEWARE = [
@@ -118,3 +123,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+GRAPHENE = {
+    'SCHEMA': 'bookstore_cms.schema.schema'
+}
